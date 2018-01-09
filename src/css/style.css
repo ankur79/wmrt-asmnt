@@ -1,7 +1,64 @@
 body {
-    background: #f9fafb;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 30px;
-  }
+  background: #f9fafb;
+  margin: 0;
+  padding: 0;
+}
+
+.app-header {
+  text-align: center;
+  padding: 5px;
+}
+  
+.list-item{
+  background: #e2e1e1;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+.list-item div{
+  padding: 15px;
+}
+
+.delete-icon{
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background: #ca0000;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+
+.pr-0 {
+  padding-right: 0 !important;
+}
+
+.fa{
+  font-size: 2em;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
