@@ -25,16 +25,15 @@ class LoginForm extends Component {
         event.preventDefault();
     }
 
-    submitLogin(event){
+    submitLogin(){
+
         this.props.userLogged();
-        event.preventDefault();
     }
 
     render() {
         const {userName, passWord, disableBtn} = this.state;
         return (
-            <div className="container-fluid">
-                <form onSubmit={this.handleSubmit}>
+            <div className="container-fluid form">
                     <div className="form-group">
                         <input
                             type="text"
@@ -54,10 +53,10 @@ class LoginForm extends Component {
                             onChange={(e) => this.handleInputChange(e)}/>
                     </div>
                     <button
-                        type="submit"
+                        onClick={()=>this.submitLogin()}
                         className="btn btn-primary btn-submit"
                         disabled={disableBtn}>Login</button>
-                </form>
+               
             </div>
         )
     }
