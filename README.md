@@ -1,2 +1,4 @@
 # wmrt-asmnt
-Assignment for Wmrt
+To install and run the app:
+  * npm install
+  * npm run dev
