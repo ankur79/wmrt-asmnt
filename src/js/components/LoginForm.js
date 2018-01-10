@@ -22,13 +22,19 @@ class LoginForm extends Component {
         const name = target.name;
         this.setState({[name]: value});
         this.verifyPassword();
+        event.preventDefault();
+    }
+
+    submitLogin(event){
+        this.props.userLogged();
+        event.preventDefault();
     }
 
     render() {
         const {userName, passWord, disableBtn} = this.state;
         return (
             <div className="container-fluid">
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <input
                             type="text"
@@ -48,7 +54,7 @@ class LoginForm extends Component {
                             onChange={(e) => this.handleInputChange(e)}/>
                     </div>
                     <button
-                        onClick={this.props.userLogged}
+                        type="submit"
                         className="btn btn-primary btn-submit"
                         disabled={disableBtn}>Login</button>
                 </form>
