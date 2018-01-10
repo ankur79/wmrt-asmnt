@@ -9,8 +9,8 @@ class LoginForm extends Component {
     }
 
     verifyPassword() {
-        const strongRegex = new RegExp("^(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-        const bool = strongRegex.test(this.state.passWord);
+        const strongRegex = new RegExp("^(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{7,})");
+        const bool = strongRegex.test(this.state.passWord) && this.state.userName !== "";
         this.setState({
             disableBtn: !bool
         });
@@ -28,7 +28,7 @@ class LoginForm extends Component {
         const {userName, passWord, disableBtn} = this.state;
         return (
             <div className="container-fluid">
-                <form onSubmit={this.props.userLogged}>
+                <form>
                     <div className="form-group">
                         <input
                             type="text"
@@ -47,7 +47,10 @@ class LoginForm extends Component {
                             placeholder="Password"
                             onChange={(e) => this.handleInputChange(e)}/>
                     </div>
-                    <button type="submit" className="btn btn-primary" disabled={disableBtn}>Login</button>
+                    <button
+                        onClick={this.props.userLogged}
+                        className="btn btn-primary btn-submit"
+                        disabled={disableBtn}>Login</button>
                 </form>
             </div>
         )

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
 const NavBar = (props) => {
-    const {isLogged} = props;
+    const {isLogged, userLogged} = props;
     const headerText = isLogged
         ? <div className="sticky-top navbar-dark bg-primary app-header row">
-                <div className="col-xs-1">
-                    <h4 className="text-white">&lt;</h4>
+                <div className="col-md-1 col-sm-1 col-xs-1" onClick={() => userLogged()}>
+                    <h4><i className="fa fa-chevron-left" aria-hidden="true"></i></h4>
                 </div>
-                <div className="col-xs-10">
+                <div className="col-md-10 col-sm-10 col-xs-10">
                     <h4 className="text-white">List</h4>
                 </div>
             </div>

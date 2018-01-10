@@ -16,7 +16,8 @@ export default class App extends Component {
   }
 
   userLogged() {
-    this.setState({isLogged: true});
+    const { isLogged } = this.state;
+    this.setState({isLogged: !isLogged});
   }
 
   delteItem(id) {
@@ -32,7 +33,7 @@ export default class App extends Component {
       : <Login userLogged={() => this.userLogged()}/>
     return (
       <div className="row">
-        <NavBar isLogged={isLogged}/> {View}
+        <NavBar isLogged={isLogged} userLogged={() => this.userLogged()}/> {View}
       </div>
     );
   }
