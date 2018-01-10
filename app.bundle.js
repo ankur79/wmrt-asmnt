@@ -23102,6 +23102,13 @@ var LoginForm = function (_Component) {
             var name = target.name;
             this.setState(_defineProperty({}, name, value));
             this.verifyPassword();
+            event.preventDefault();
+        }
+    }, {
+        key: 'submitLogin',
+        value: function submitLogin(event) {
+            this.props.userLogged();
+            event.preventDefault();
         }
     }, {
         key: 'render',
@@ -23118,7 +23125,7 @@ var LoginForm = function (_Component) {
                 { className: 'container-fluid' },
                 _react2.default.createElement(
                     'form',
-                    null,
+                    { onSubmit: this.handleSubmit },
                     _react2.default.createElement(
                         'div',
                         { className: 'form-group' },
@@ -23148,7 +23155,7 @@ var LoginForm = function (_Component) {
                     _react2.default.createElement(
                         'button',
                         {
-                            onClick: this.props.userLogged,
+                            type: 'submit',
                             className: 'btn btn-primary btn-submit',
                             disabled: disableBtn },
                         'Login'
