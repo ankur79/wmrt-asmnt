@@ -17,6 +17,7 @@ export default class App extends Component {
 
   userLogged() {
     const { isLogged } = this.state;
+    
     this.setState({isLogged: !isLogged});
   }
 

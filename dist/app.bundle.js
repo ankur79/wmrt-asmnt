@@ -1256,6 +1256,7 @@ var App = function (_Component) {
     value: function userLogged() {
       var isLogged = this.state.isLogged;
 
+
       this.setState({ isLogged: !isLogged });
     }
   }, {
@@ -23106,9 +23107,9 @@ var LoginForm = function (_Component) {
         }
     }, {
         key: 'submitLogin',
-        value: function submitLogin(event) {
+        value: function submitLogin() {
+
             this.props.userLogged();
-            event.preventDefault();
         }
     }, {
         key: 'render',
@@ -23122,44 +23123,42 @@ var LoginForm = function (_Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'container-fluid' },
+                { className: 'container-fluid form' },
                 _react2.default.createElement(
-                    'form',
-                    { onSubmit: this.handleSubmit },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
-                        _react2.default.createElement('input', {
-                            type: 'text',
-                            className: 'form-control',
-                            name: 'userName',
-                            value: userName,
-                            placeholder: 'Username',
-                            onChange: function onChange(e) {
-                                return _this2.handleInputChange(e);
-                            } })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
-                        _react2.default.createElement('input', {
-                            type: 'password',
-                            className: 'form-control',
-                            name: 'passWord',
-                            value: passWord,
-                            placeholder: 'Password',
-                            onChange: function onChange(e) {
-                                return _this2.handleInputChange(e);
-                            } })
-                    ),
-                    _react2.default.createElement(
-                        'button',
-                        {
-                            type: 'submit',
-                            className: 'btn btn-primary btn-submit',
-                            disabled: disableBtn },
-                        'Login'
-                    )
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement('input', {
+                        type: 'text',
+                        className: 'form-control',
+                        name: 'userName',
+                        value: userName,
+                        placeholder: 'Username',
+                        onChange: function onChange(e) {
+                            return _this2.handleInputChange(e);
+                        } })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement('input', {
+                        type: 'password',
+                        className: 'form-control',
+                        name: 'passWord',
+                        value: passWord,
+                        placeholder: 'Password',
+                        onChange: function onChange(e) {
+                            return _this2.handleInputChange(e);
+                        } })
+                ),
+                _react2.default.createElement(
+                    'button',
+                    {
+                        onClick: function onClick() {
+                            return _this2.submitLogin();
+                        },
+                        className: 'btn btn-primary btn-submit',
+                        disabled: disableBtn },
+                    'Login'
                 )
             );
         }
