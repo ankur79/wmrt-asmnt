@@ -16,21 +16,35 @@ body {
   text-align: center;
   padding: 5px;
 }
-  
-.list-item{
-  background: #e2e1e1;
+
+.list-item {
   border-bottom: 1px solid #b5b5b5;
 }
 
-.list-item div{
+.content-row {
+  background: #e2e1e1;
+  z-index: 1;
+  position: absolute;
+  height: 49px;
   padding: 15px;
 }
 
-.delete-icon{
+.delete-icon {
   text-align: center;
   color: white;
   font-weight: bold;
   background: #ca0000;
+  cursor: pointer;
+  float: right;
+}
+
+form {
+  padding: 15px;
+  margin: 15px;
+}
+
+.btn-submit{
+  width: 100%;
 }
 
 .pt-0 {
@@ -49,7 +63,7 @@ body {
   padding-right: 0 !important;
 }
 
-.fa{
+.fa-trash-o {
   font-size: 2em;
 }
 
